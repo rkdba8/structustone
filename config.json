@@ -1,6 +1,6 @@
 {
   "max_rent": 1400,
-  "min_bedrooms": 2,
+  "min_bedrooms": 1,
   "check_all_locations": true,
   "sources": {
     "structura": true,
