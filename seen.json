@@ -21,7 +21,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-09-17T10:02:43+00:00"
+      "last_seen": "2026-09-17T10:08:34+00:00"
     },
     "structura:1791734": {
       "source": "structura",
@@ -43,7 +43,7 @@
       "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-09-17T10:02:43+00:00"
+      "last_seen": "2026-09-17T10:08:34+00:00"
     },
     "structura:1791679": {
       "source": "structura",
@@ -65,7 +65,7 @@
       "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-09-17T10:02:43+00:00"
+      "last_seen": "2026-09-17T10:08:34+00:00"
     },
     "structura:1791535": {
       "source": "structura",
@@ -87,7 +87,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-09-17T10:02:43+00:00"
+      "last_seen": "2026-09-17T10:08:34+00:00"
     },
     "structura:1791819": {
       "source": "structura",
@@ -109,7 +109,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-09-17T10:02:43+00:00"
+      "last_seen": "2026-09-17T10:08:34+00:00"
     },
     "structura:1791662": {
       "source": "structura",
@@ -131,7 +131,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-09-17T10:02:43+00:00"
+      "last_seen": "2026-09-17T10:08:34+00:00"
     },
     "structura:1791670": {
       "source": "structura",
@@ -153,7 +153,7 @@
       "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-09-17T10:02:43+00:00"
+      "last_seen": "2026-09-17T10:08:34+00:00"
     },
     "structura:1791715": {
       "source": "structura",
@@ -175,7 +175,7 @@
       "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-09-17T10:02:43+00:00"
+      "last_seen": "2026-09-17T10:08:34+00:00"
     },
     "structura:1791811": {
       "source": "structura",
@@ -197,7 +197,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-09-17T10:02:43+00:00"
+      "last_seen": "2026-09-17T10:08:34+00:00"
     },
     "structura:1791818": {
       "source": "structura",
@@ -219,7 +219,7 @@
       "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-09-17T10:02:43+00:00"
+      "last_seen": "2026-09-17T10:08:34+00:00"
     },
     "structura:1791756": {
       "source": "structura",
@@ -241,7 +241,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-09-17T10:02:43+00:00"
+      "last_seen": "2026-09-17T10:08:34+00:00"
     },
     "structura:1791617": {
       "source": "structura",
@@ -263,7 +263,7 @@
       "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-09-17T10:02:43+00:00"
+      "last_seen": "2026-09-17T10:08:34+00:00"
     },
     "structura:1791735": {
       "source": "structura",
@@ -285,7 +285,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-09-17T10:02:43+00:00"
+      "last_seen": "2026-09-17T10:08:34+00:00"
     },
     "structura:1782009": {
       "source": "structura",
@@ -307,7 +307,7 @@
       "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-09-17T10:02:43+00:00"
+      "last_seen": "2026-09-17T10:08:34+00:00"
     },
     "living_stone:79919": {
       "source": "living_stone",
@@ -329,7 +329,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-09-17T10:02:43+00:00"
+      "last_seen": "2026-09-17T10:08:34+00:00"
     },
     "living_stone:81408": {
       "source": "living_stone",
@@ -351,7 +351,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-09-17T10:02:43+00:00"
+      "last_seen": "2026-09-17T10:08:34+00:00"
     },
     "living_stone:81392": {
       "source": "living_stone",
@@ -373,7 +373,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-09-17T10:02:43+00:00"
+      "last_seen": "2026-09-17T10:08:34+00:00"
     },
     "living_stone:32573": {
       "source": "living_stone",
@@ -393,9 +393,9 @@
       "booking_url": "https://app.mason.immo/booking/GveEVR",
       "reference": "32573",
       "available": true,
-      "qualifies": false,
-      "notified": false,
-      "last_seen": "2026-09-17T10:02:43+00:00"
+      "qualifies": true,
+      "notified": true,
+      "last_seen": "2026-09-17T10:08:34+00:00"
     },
     "living_stone:80505": {
       "source": "living_stone",
@@ -415,9 +415,9 @@
       "booking_url": "https://app.mason.immo/booking/736jPG",
       "reference": "80505",
       "available": true,
-      "qualifies": false,
-      "notified": false,
-      "last_seen": "2026-09-17T10:02:43+00:00"
+      "qualifies": true,
+      "notified": true,
+      "last_seen": "2026-09-17T10:08:34+00:00"
     },
     "living_stone:80251": {
       "source": "living_stone",
@@ -439,7 +439,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-09-17T10:02:43+00:00"
+      "last_seen": "2026-09-17T10:08:34+00:00"
     },
     "living_stone:28817": {
       "source": "living_stone",
@@ -459,9 +459,9 @@
       "booking_url": "https://living-stone.be/fr/appartement/a-louer/leuven-3000/bondgenotenlaan-111-0102-qnjvj",
       "reference": "28817",
       "available": true,
-      "qualifies": false,
-      "notified": false,
-      "last_seen": "2026-09-17T10:02:43+00:00"
+      "qualifies": true,
+      "notified": true,
+      "last_seen": "2026-09-17T10:08:34+00:00"
     },
     "living_stone:81591": {
       "source": "living_stone",
@@ -483,7 +483,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-09-17T10:02:43+00:00"
+      "last_seen": "2026-09-17T10:08:34+00:00"
     },
     "living_stone:81345": {
       "source": "living_stone",
@@ -505,7 +505,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-09-17T10:02:43+00:00"
+      "last_seen": "2026-09-17T10:08:34+00:00"
     },
     "living_stone:81687": {
       "source": "living_stone",
@@ -525,9 +525,9 @@
       "booking_url": "https://app.mason.immo/booking/7mwNkR",
       "reference": "81687",
       "available": true,
-      "qualifies": false,
-      "notified": false,
-      "last_seen": "2026-09-17T10:02:43+00:00"
+      "qualifies": true,
+      "notified": true,
+      "last_seen": "2026-09-17T10:08:34+00:00"
     },
     "living_stone:81082": {
       "source": "living_stone",
@@ -549,7 +549,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-09-17T10:02:43+00:00"
+      "last_seen": "2026-09-17T10:08:34+00:00"
     },
     "living_stone:81334": {
       "source": "living_stone",
@@ -569,10 +569,10 @@
       "booking_url": "https://app.mason.immo/booking/GaKJwz",
       "reference": "81334",
       "available": true,
-      "qualifies": false,
-      "notified": false,
-      "last_seen": "2026-09-17T10:02:43+00:00"
+      "qualifies": true,
+      "notified": true,
+      "last_seen": "2026-09-17T10:08:34+00:00"
     }
   },
-  "last_run": "2026-09-17T10:02:43+00:00"
+  "last_run": "2026-09-17T10:08:34+00:00"
 }
