@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parent
 CONFIG_FILE = ROOT / "config.json"
 STATE_FILE = ROOT / "seen.json"
 
-STRUCTURA_LIST_URL = "https://www.structura.be/fr/a-louer/appartements"
+STRUCTURA_LIST_URL = "https://www.structura.be/fr/a-louer"
 LIVING_STONE_LIST_URL = "https://living-stone.be/fr/a-louer"
 
 USER_AGENT = (
