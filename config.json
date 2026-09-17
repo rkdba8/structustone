@@ -1,9 +1,10 @@
 {
   "max_rent": 1400,
-  "min_bedrooms": 1,
+  "min_bedrooms": 2,
   "check_all_locations": true,
   "sources": {
     "structura": true,
     "living_stone": true
-  }
+  },
+  "telegram_max_photos": 0
 }

@@ -7,7 +7,7 @@ import json
 import os
 import re
 import sys
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Iterable
@@ -68,6 +68,7 @@ class Listing:
     booking_url: str | None
     reference: str | None
     available: bool
+    image_urls: list[str] = field(default_factory=list)
 
     def qualifies(self, max_rent: int, min_bedrooms: int) -> bool:
         return (
@@ -305,6 +306,172 @@ async def get_meta_content(page: Page, selectors: list[str]) -> str | None:
     return None
 
 
+def _normalize_image_url(raw: str, base_url: str) -> str | None:
+    raw = (raw or "").strip().strip('"\'')
+    if not raw or raw.startswith(("data:", "blob:", "javascript:")):
+        return None
+    # srcset candidates can contain a trailing width/density descriptor.
+    raw = re.sub(r"\s+(?:\d+w|\d+(?:\.\d+)?x)$", "", raw).strip()
+    url = urljoin(base_url, raw)
+    parts = urlsplit(url)
+    if parts.scheme not in {"http", "https"}:
+        return None
+
+    lowered = url.lower()
+    banned = (
+        "favicon", "logo", "sprite", "icon", "marker", "placeholder",
+        "avatar", "facebook", "instagram", "linkedin", "youtube", "tiktok",
+        "/flags/", "cookie", "consent", "tracking", "pixel",
+    )
+    if any(word in lowered for word in banned):
+        return None
+    if re.search(r"\.(?:svg|gif)(?:$|[?#])", lowered):
+        return None
+    return url
+
+
+def _dedupe_image_urls(urls: Iterable[str], base_url: str) -> list[str]:
+    out: list[str] = []
+    seen: set[str] = set()
+    for raw in urls:
+        url = _normalize_image_url(raw, base_url)
+        if not url:
+            continue
+        # Strip fragments only; keep query strings because many CDNs use them.
+        parts = urlsplit(url)
+        key = urlunsplit((parts.scheme, parts.netloc, parts.path, parts.query, ""))
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(key)
+    return out
+
+
+async def extract_jsonld_images(page: Page, base_url: str) -> list[str]:
+    try:
+        scripts = await page.locator('script[type="application/ld+json"]').all_text_contents()
+    except Exception:
+        return []
+
+    candidates: list[str] = []
+
+    def walk(value):
+        if isinstance(value, dict):
+            image = value.get("image")
+            if isinstance(image, str):
+                candidates.append(image)
+            elif isinstance(image, list):
+                for entry in image:
+                    if isinstance(entry, str):
+                        candidates.append(entry)
+                    elif isinstance(entry, dict):
+                        for key in ("url", "contentUrl", "thumbnailUrl"):
+                            if isinstance(entry.get(key), str):
+                                candidates.append(entry[key])
+            elif isinstance(image, dict):
+                for key in ("url", "contentUrl", "thumbnailUrl"):
+                    if isinstance(image.get(key), str):
+                        candidates.append(image[key])
+            for child in value.values():
+                walk(child)
+        elif isinstance(value, list):
+            for child in value:
+                walk(child)
+
+    for raw in scripts:
+        try:
+            walk(json.loads(raw))
+        except Exception:
+            continue
+    return _dedupe_image_urls(candidates, base_url)
+
+
+async def extract_image_urls(page: Page, base_url: str, cover_url: str | None) -> list[str]:
+    """Collect listing/gallery photos while filtering obvious site chrome.
+
+    We combine JSON-LD, links to full-size images and rendered <img> elements.
+    The cover image is deliberately kept first.
+    """
+    # Trigger lazy-loaded gallery thumbnails/images.
+    try:
+        await auto_scroll(page, rounds=10)
+        await page.wait_for_timeout(500)
+    except Exception:
+        pass
+
+    candidates: list[str] = []
+    if cover_url:
+        candidates.append(cover_url)
+
+    candidates.extend(await extract_jsonld_images(page, base_url))
+
+    try:
+        hrefs = await page.locator("a").evaluate_all(
+            """els => els.flatMap(a => {
+                const href = a.href || a.getAttribute('href') || '';
+                if (!href) return [];
+                const low = href.toLowerCase();
+                if (/\\.(jpg|jpeg|png|webp|avif)(\\?|#|$)/.test(low)) return [href];
+                if (/(image|photo|media|gallery|cdn)/.test(low) && a.querySelector('img')) return [href];
+                return [];
+            })"""
+        )
+        candidates.extend(hrefs)
+    except Exception:
+        pass
+
+    try:
+        images = await page.locator("img").evaluate_all(
+            """els => els.flatMap(img => {
+                const vals = [];
+                const push = v => { if (v) vals.push(v); };
+                push(img.currentSrc);
+                push(img.src);
+                for (const name of ['data-src','data-lazy-src','data-original','data-image','data-large','data-full']) {
+                    push(img.getAttribute(name));
+                }
+                for (const name of ['srcset','data-srcset']) {
+                    const set = img.getAttribute(name) || '';
+                    set.split(',').forEach(part => push(part.trim().split(/\\s+/)[0]));
+                }
+                // Keep actual content-sized images and gallery/lightbox images.
+                const meta = {
+                    vals,
+                    w: img.naturalWidth || 0,
+                    h: img.naturalHeight || 0,
+                    text: ((img.alt || '') + ' ' + (img.className || '') + ' ' + (img.id || '')).toLowerCase()
+                };
+                const likelyGallery = /(gallery|photo|image|property|estate|slider|carousel|swiper)/.test(meta.text);
+                if ((meta.w >= 280 && meta.h >= 180) || likelyGallery) return meta.vals;
+                return [];
+            })"""
+        )
+        candidates.extend(images)
+    except Exception:
+        pass
+
+    urls = _dedupe_image_urls(candidates, base_url)
+
+    # Avoid obvious tiny UI assets missed by DOM dimensions by preferring common
+    # photo/CDN paths; always preserve the cover image.
+    cover_clean = _normalize_image_url(cover_url or "", base_url) if cover_url else None
+    filtered: list[str] = []
+    for url in urls:
+        low = url.lower()
+        if cover_clean and url == cover_clean:
+            filtered.append(url)
+            continue
+        if any(token in low for token in ("/images/", "/image/", "/photos/", "/photo/", "/media/", "cloudinary", "cdn", "imgix", "property", "pand", "estate")):
+            filtered.append(url)
+            continue
+        if re.search(r"\.(?:jpe?g|png|webp|avif)(?:$|[?])", low):
+            filtered.append(url)
+
+    # A website may expose the same underlying image through multiple resized URLs.
+    # Keep exact URLs for now; Telegram will show all distinct gallery assets.
+    return filtered
+
+
 async def extract_booking_url(page: Page, base_url: str) -> str | None:
     try:
         anchors = await page.locator("a").evaluate_all(
@@ -383,6 +550,9 @@ async def parse_listing(page: Page, source: str, url: str) -> Listing | None:
     )
     if image_url:
         image_url = urljoin(url, image_url)
+    image_urls = await extract_image_urls(page, url, image_url)
+    if not image_url and image_urls:
+        image_url = image_urls[0]
 
     address = await extract_jsonld_address(page) or extract_address_from_text(text)
     postal_code = extract_postal_code(address or "") or extract_postal_code(text[:2500])
@@ -406,6 +576,7 @@ async def parse_listing(page: Page, source: str, url: str) -> Listing | None:
         booking_url=booking_url,
         reference=reference,
         available=is_available(text),
+        image_urls=image_urls,
     )
 
 
@@ -423,6 +594,13 @@ async def scrape_source(browser: Browser, source: str, list_url: str) -> list[Li
                 listings.append(item)
             if index % 5 == 0 or index == len(links):
                 print(f"{source}: {index}/{len(links)} fiche(s) analysée(s)")
+        if listings:
+            photo_counts = [len(item.image_urls) for item in listings]
+            print(
+                f"{source}: {sum(photo_counts)} photo(s), "
+                f"moyenne {sum(photo_counts) / len(photo_counts):.1f}/annonce "
+                f"(min {min(photo_counts)}, max {max(photo_counts)})"
+            )
         return listings
     finally:
         await context.close()
@@ -516,33 +694,166 @@ def _telegram_credentials() -> tuple[str, str]:
     return token, chat_id
 
 
-def send_telegram(item: Listing, event: str = "new") -> None:
+def _telegram_api(token: str, method: str, payload: dict, timeout: int = 30) -> requests.Response:
+    response = requests.post(
+        f"https://api.telegram.org/bot{token}/{method}",
+        json=payload,
+        timeout=timeout,
+    )
+    response.raise_for_status()
+    return response
+
+
+def _chunks(values: list[str], size: int) -> Iterable[list[str]]:
+    for start in range(0, len(values), size):
+        yield values[start:start + size]
+
+
+def _send_single_photo(token: str, chat_id: str, photo_url: str, caption: str | None = None,
+                       keyboard: dict | None = None) -> bool:
+    payload: dict = {"chat_id": chat_id, "photo": photo_url}
+    if caption:
+        payload.update({"caption": caption, "parse_mode": "HTML"})
+    if keyboard:
+        payload["reply_markup"] = keyboard
+    try:
+        _telegram_api(token, "sendPhoto", payload, timeout=30)
+        return True
+    except requests.RequestException as exc:
+        print(f"WARN: photo Telegram ignorée ({photo_url}): {exc}", file=sys.stderr)
+        return False
+
+
+def _send_album_batch(token: str, chat_id: str, photos: list[str], caption: str | None = None,
+                      keyboard: dict | None = None) -> bool:
+    media = []
+    for idx, photo_url in enumerate(photos):
+        entry: dict = {"type": "photo", "media": photo_url}
+        if idx == 0 and caption:
+            entry.update({"caption": caption, "parse_mode": "HTML"})
+        media.append(entry)
+
+    try:
+        response = _telegram_api(
+            token,
+            "sendMediaGroup",
+            {"chat_id": chat_id, "media": media},
+            timeout=45,
+        )
+        # sendMediaGroup has no reply_markup parameter. Attach the keyboard to
+        # the first photo afterwards; if Telegram ever rejects that edit we
+        # fall back to a tiny links message.
+        if keyboard:
+            try:
+                result = response.json().get("result") or []
+                if result:
+                    _telegram_api(
+                        token,
+                        "editMessageReplyMarkup",
+                        {
+                            "chat_id": chat_id,
+                            "message_id": result[0]["message_id"],
+                            "reply_markup": keyboard,
+                        },
+                        timeout=20,
+                    )
+            except Exception as exc:
+                print(f"WARN: impossible d'attacher les boutons à l'album: {exc}", file=sys.stderr)
+                _telegram_api(
+                    token,
+                    "sendMessage",
+                    {
+                        "chat_id": chat_id,
+                        "text": "🔗 <b>Liens rapides</b>",
+                        "parse_mode": "HTML",
+                        "reply_markup": keyboard,
+                    },
+                    timeout=20,
+                )
+        return True
+    except requests.RequestException as exc:
+        print(f"WARN: album Telegram échoué, envoi photo par photo: {exc}", file=sys.stderr)
+        return False
+
+
+def send_telegram(item: Listing, event: str = "new", max_photos: int = 0) -> None:
     token, chat_id = _telegram_credentials()
     caption = format_notification(item, event=event)
     keyboard = telegram_keyboard(item)
 
-    # Prefer a native Telegram photo so the cover image is displayed large.
-    if item.image_url:
-        try:
-            response = requests.post(
-                f"https://api.telegram.org/bot{token}/sendPhoto",
-                json={
-                    "chat_id": chat_id,
-                    "photo": item.image_url,
-                    "caption": caption,
-                    "parse_mode": "HTML",
-                    "reply_markup": keyboard,
-                },
-                timeout=25,
-            )
-            response.raise_for_status()
-            return
-        except requests.RequestException as exc:
-            print(f"WARN: sendPhoto a échoué, fallback texte: {exc}", file=sys.stderr)
+    photos = list(item.image_urls or ([] if not item.image_url else [item.image_url]))
+    if item.image_url and item.image_url not in photos:
+        photos.insert(0, item.image_url)
+    photos = list(dict.fromkeys(photos))
+    if max_photos > 0:
+        photos = photos[:max_photos]
 
-    response = requests.post(
-        f"https://api.telegram.org/bot{token}/sendMessage",
-        json={
+    print(f"Telegram: {item.source} {item.key} -> {len(photos)} photo(s)")
+
+    if len(photos) == 1:
+        if _send_single_photo(token, chat_id, photos[0], caption=caption, keyboard=keyboard):
+            return
+
+    elif len(photos) >= 2:
+        batches = list(_chunks(photos, 10))
+        first_caption_pending = True
+        keyboard_pending = True
+        all_ok = True
+
+        for batch in batches:
+            # Telegram albums require 2-10 items. A final one-photo batch is
+            # sent with sendPhoto instead.
+            batch_caption = caption if first_caption_pending else None
+            batch_keyboard = keyboard if keyboard_pending else None
+            if len(batch) >= 2:
+                ok = _send_album_batch(
+                    token,
+                    chat_id,
+                    batch,
+                    caption=batch_caption,
+                    keyboard=batch_keyboard,
+                )
+                if ok:
+                    first_caption_pending = False
+                    keyboard_pending = False
+                    continue
+                all_ok = False
+                # Preserve all pictures even if one URL breaks the album.
+                for idx, photo_url in enumerate(batch):
+                    sent = _send_single_photo(
+                        token,
+                        chat_id,
+                        photo_url,
+                        caption=caption if first_caption_pending and idx == 0 else None,
+                        keyboard=keyboard if keyboard_pending and idx == 0 else None,
+                    )
+                    if sent and first_caption_pending:
+                        first_caption_pending = False
+                    if sent and keyboard_pending:
+                        keyboard_pending = False
+            else:
+                sent = _send_single_photo(
+                    token,
+                    chat_id,
+                    batch[0],
+                    caption=batch_caption,
+                    keyboard=batch_keyboard,
+                )
+                if sent:
+                    first_caption_pending = False
+                    keyboard_pending = False
+                else:
+                    all_ok = False
+
+        if not first_caption_pending:
+            return
+        if not all_ok:
+            print("WARN: aucune photo Telegram exploitable, fallback texte", file=sys.stderr)
+
+    _telegram_api(
+        token,
+        "sendMessage",
+        {
             "chat_id": chat_id,
             "text": caption,
             "parse_mode": "HTML",
@@ -551,7 +862,6 @@ def send_telegram(item: Listing, event: str = "new") -> None:
         },
         timeout=20,
     )
-    response.raise_for_status()
 
 
 def current_iso() -> str:
@@ -561,6 +871,13 @@ def current_iso() -> str:
 def update_state_and_notify(listings: Iterable[Listing], config: dict, state: dict) -> tuple[int, int]:
     max_rent = int(config["max_rent"])
     min_bedrooms = int(config["min_bedrooms"])
+    max_photos = int(config.get("telegram_max_photos", 0) or 0)
+    force_send_current = os.environ.get("FORCE_SEND_CURRENT", "").lower() in {"1", "true", "yes", "on"}
+    try:
+        force_send_limit = int(os.environ.get("FORCE_SEND_LIMIT", "1") or "1")
+    except ValueError:
+        force_send_limit = 1
+    forced_sent = 0
     first_run = not bool(state.get("initialized", False))
     records = state.setdefault("listings", {})
     now = current_iso()
@@ -578,7 +895,14 @@ def update_state_and_notify(listings: Iterable[Listing], config: dict, state: di
         old_qualifies = bool(old.get("qualifies", False))
 
         event: str | None = None
-        if not first_run and qualifies and not already_notified:
+        if (
+            force_send_current
+            and qualifies
+            and (force_send_limit <= 0 or forced_sent < force_send_limit)
+        ):
+            event = "new"
+            forced_sent += 1
+        elif not first_run and qualifies and not already_notified:
             event = "new"
         elif (
             not first_run
@@ -593,7 +917,7 @@ def update_state_and_notify(listings: Iterable[Listing], config: dict, state: di
             event = "new"
 
         if event:
-            send_telegram(item, event=event)
+            send_telegram(item, event=event, max_photos=max_photos)
             notification_count += 1
             already_notified = True
 
