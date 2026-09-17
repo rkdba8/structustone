@@ -762,64 +762,126 @@ def _send_single_photo(token: str, chat_id: str, photo_url: str, caption: str | 
         return False
 
 
-def _send_album_batch(token: str, chat_id: str, photos: list[str]) -> bool:
-    media = [{"type": "photo", "media": photo_url} for photo_url in photos]
+def _send_album_batch(
+    token: str,
+    chat_id: str,
+    photos: list[str],
+    caption: str | None = None,
+) -> bool:
+    media = []
+
+    for index, photo_url in enumerate(photos):
+        item = {
+            "type": "photo",
+            "media": photo_url,
+        }
+
+        # Telegram affiche la légende sous l'album si elle est
+        # attachée à la première photo.
+        if index == 0 and caption:
+            item["caption"] = caption
+            item["parse_mode"] = "HTML"
+
+        media.append(item)
+
     try:
         _telegram_api(
             token,
             "sendMediaGroup",
-            {"chat_id": chat_id, "media": media},
+            {
+                "chat_id": chat_id,
+                "media": media,
+            },
             timeout=45,
         )
         return True
+
     except requests.RequestException as exc:
-        print(f"WARN: album Telegram échoué, envoi photo par photo: {exc}", file=sys.stderr)
+        print(
+            f"WARN: album Telegram échoué: {exc}",
+            file=sys.stderr,
+        )
         return False
 
 
-def send_telegram(item: Listing, event: str = "new", max_photos: int = 0) -> None:
+def send_telegram(
+    item: Listing,
+    event: str = "new",
+    max_photos: int = 10,
+) -> None:
     token, chat_id = _telegram_credentials()
+
     caption = format_notification(item, event=event)
     keyboard = telegram_keyboard(item)
 
-    photos = list(item.image_urls or ([] if not item.image_url else [item.image_url]))
+    photos = list(
+        item.image_urls
+        or ([] if not item.image_url else [item.image_url])
+    )
+
     if item.image_url and item.image_url not in photos:
         photos.insert(0, item.image_url)
+
     photos = _dedupe_image_urls(photos, item.url)
+
+    # Ici 10 = maximum 10 photos AU TOTAL dans l'album.
     if max_photos > 0:
         photos = photos[:max_photos]
 
-    print(f"Telegram: {item.source} {item.key} -> {len(photos)} photo(s) unique(s)")
+    print(
+        f"Telegram: {item.source} {item.key} "
+        f"-> {len(photos)} photo(s) dans la galerie"
+    )
 
-    if photos:
-        # Telegram media groups do not support inline keyboards. Keep the cover
-        # photo as the rich notification (caption + buttons), then send the rest
-        # as clean gallery albums. This avoids the 400 editMessageReplyMarkup
-        # error and keeps the alert readable.
-        cover = photos[0]
-        cover_sent = _send_single_photo(
-            token, chat_id, cover, caption=caption, keyboard=keyboard
+    # ---------- Galerie + texte ----------
+    if len(photos) >= 2:
+        album_sent = _send_album_batch(
+            token,
+            chat_id,
+            photos,
+            caption=caption,
         )
-        if cover_sent:
-            remaining = photos[1:]
-            for batch in _chunks(remaining, 10):
-                if len(batch) >= 2:
-                    if _send_album_batch(token, chat_id, batch):
-                        continue
-                    for photo_url in batch:
-                        _send_single_photo(token, chat_id, photo_url)
-                elif len(batch) == 1:
-                    _send_single_photo(token, chat_id, batch[0])
-            return
 
+        if not album_sent:
+            # Fallback : première photo + texte
+            _send_single_photo(
+                token,
+                chat_id,
+                photos[0],
+                caption=caption,
+            )
+
+    elif len(photos) == 1:
+        _send_single_photo(
+            token,
+            chat_id,
+            photos[0],
+            caption=caption,
+        )
+
+    else:
+        # Aucun média disponible
+        _telegram_api(
+            token,
+            "sendMessage",
+            {
+                "chat_id": chat_id,
+                "text": caption,
+                "parse_mode": "HTML",
+                "disable_web_page_preview": True,
+            },
+            timeout=20,
+        )
+
+    # ---------- Message séparé avec boutons ----------
     _telegram_api(
         token,
         "sendMessage",
         {
             "chat_id": chat_id,
-            "text": caption,
+            "text": "🔗 <b>Liens rapides</b>",
             "parse_mode": "HTML",
-            "disable_web_page_preview": False,
+            "disable_web_page_preview": True,
             "reply_markup": keyboard,
         },
         timeout=20,
