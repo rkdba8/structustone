@@ -3,7 +3,7 @@
   "min_bedrooms": 2,
   "check_all_locations": true,
   "sources": {
-    "structura": true,
+    "structura": false,
     "living_stone": true
   },
   "telegram_max_photos": 10
