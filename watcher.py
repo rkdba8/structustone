@@ -11,7 +11,7 @@ from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Iterable
-from urllib.parse import quote_plus, urljoin, urlsplit, urlunsplit
+from urllib.parse import parse_qsl, quote_plus, urlencode, urljoin, urlsplit, urlunsplit
 from zoneinfo import ZoneInfo
 
 import requests
@@ -330,6 +330,49 @@ def _normalize_image_url(raw: str, base_url: str) -> str | None:
     return url
 
 
+_IMAGE_TRANSFORM_QUERY_KEYS = {
+    "w", "width", "h", "height", "q", "quality", "fit", "crop", "fm",
+    "format", "auto", "dpr", "rect", "sharp", "blur", "gravity", "g",
+}
+
+
+def _image_identity(url: str) -> str:
+    """Return a stable identity for responsive variants of the same photo.
+
+    Real-estate sites commonly expose one photo several times (thumbnail, 800px,
+    1600px, WebP, etc.). Telegram should receive the photo once, not every
+    responsive rendition.
+    """
+    parts = urlsplit(url)
+    path = parts.path
+
+    # Common filename transforms: photo-1200x800.jpg, photo_640x480.webp,
+    # photo-large.jpg, etc. Keep the actual URL for sending; normalize only the
+    # identity used for deduplication.
+    path = re.sub(
+        r"(?i)(?:[-_](?:thumb|thumbnail|small|medium|large|xl|xxl|original)|[-_]\d{2,4}x\d{2,4})(?=\.(?:jpe?g|png|webp|avif)$)",
+        "",
+        path,
+    )
+    # Some CDNs put the rendition in its own path segment.
+    path = "/".join(
+        segment for segment in path.split("/")
+        if segment.lower() not in {"thumb", "thumbnail", "small", "medium", "large", "xl", "xxl", "original"}
+    )
+    # JPG/WebP/AVIF versions of the same path are normally the same photo.
+    path = re.sub(r"(?i)\.(?:jpe?g|png|webp|avif)$", "", path)
+
+    # Strip standard image-resize query params while retaining meaningful IDs
+    # or signatures used by the CDN.
+    query = []
+    for key, value in parse_qsl(parts.query, keep_blank_values=True):
+        if key.lower() in _IMAGE_TRANSFORM_QUERY_KEYS:
+            continue
+        query.append((key, value))
+
+    return urlunsplit((parts.scheme.lower(), parts.netloc.lower(), path, urlencode(query), ""))
+
+
 def _dedupe_image_urls(urls: Iterable[str], base_url: str) -> list[str]:
     out: list[str] = []
     seen: set[str] = set()
@@ -337,13 +380,11 @@ def _dedupe_image_urls(urls: Iterable[str], base_url: str) -> list[str]:
         url = _normalize_image_url(raw, base_url)
         if not url:
             continue
-        # Strip fragments only; keep query strings because many CDNs use them.
-        parts = urlsplit(url)
-        key = urlunsplit((parts.scheme, parts.netloc, parts.path, parts.query, ""))
+        key = _image_identity(url)
         if key in seen:
             continue
         seen.add(key)
-        out.append(key)
+        out.append(url)
     return out
 
 
@@ -392,13 +433,10 @@ async def extract_image_urls(page: Page, base_url: str, cover_url: str | None) -
     We combine JSON-LD, links to full-size images and rendered <img> elements.
     The cover image is deliberately kept first.
     """
-    # Trigger lazy-loaded gallery thumbnails/images.
-    try:
-        await auto_scroll(page, rounds=10)
-        await page.wait_for_timeout(500)
-    except Exception:
-        pass
-
+    # Do not scroll through every detail page here. Most galleries expose their
+    # URLs in the DOM/data attributes immediately; scrolling every listing made
+    # scheduled runs several minutes slower and also loaded lots of duplicate
+    # responsive image variants.
     candidates: list[str] = []
     if cover_url:
         candidates.append(cover_url)
@@ -724,52 +762,15 @@ def _send_single_photo(token: str, chat_id: str, photo_url: str, caption: str | 
         return False
 
 
-def _send_album_batch(token: str, chat_id: str, photos: list[str], caption: str | None = None,
-                      keyboard: dict | None = None) -> bool:
-    media = []
-    for idx, photo_url in enumerate(photos):
-        entry: dict = {"type": "photo", "media": photo_url}
-        if idx == 0 and caption:
-            entry.update({"caption": caption, "parse_mode": "HTML"})
-        media.append(entry)
-
+def _send_album_batch(token: str, chat_id: str, photos: list[str]) -> bool:
+    media = [{"type": "photo", "media": photo_url} for photo_url in photos]
     try:
-        response = _telegram_api(
+        _telegram_api(
             token,
             "sendMediaGroup",
             {"chat_id": chat_id, "media": media},
             timeout=45,
         )
-        # sendMediaGroup has no reply_markup parameter. Attach the keyboard to
-        # the first photo afterwards; if Telegram ever rejects that edit we
-        # fall back to a tiny links message.
-        if keyboard:
-            try:
-                result = response.json().get("result") or []
-                if result:
-                    _telegram_api(
-                        token,
-                        "editMessageReplyMarkup",
-                        {
-                            "chat_id": chat_id,
-                            "message_id": result[0]["message_id"],
-                            "reply_markup": keyboard,
-                        },
-                        timeout=20,
-                    )
-            except Exception as exc:
-                print(f"WARN: impossible d'attacher les boutons à l'album: {exc}", file=sys.stderr)
-                _telegram_api(
-                    token,
-                    "sendMessage",
-                    {
-                        "chat_id": chat_id,
-                        "text": "🔗 <b>Liens rapides</b>",
-                        "parse_mode": "HTML",
-                        "reply_markup": keyboard,
-                    },
-                    timeout=20,
-                )
         return True
     except requests.RequestException as exc:
         print(f"WARN: album Telegram échoué, envoi photo par photo: {exc}", file=sys.stderr)
@@ -784,71 +785,32 @@ def send_telegram(item: Listing, event: str = "new", max_photos: int = 0) -> Non
     photos = list(item.image_urls or ([] if not item.image_url else [item.image_url]))
     if item.image_url and item.image_url not in photos:
         photos.insert(0, item.image_url)
-    photos = list(dict.fromkeys(photos))
+    photos = _dedupe_image_urls(photos, item.url)
     if max_photos > 0:
         photos = photos[:max_photos]
 
-    print(f"Telegram: {item.source} {item.key} -> {len(photos)} photo(s)")
+    print(f"Telegram: {item.source} {item.key} -> {len(photos)} photo(s) unique(s)")
 
-    if len(photos) == 1:
-        if _send_single_photo(token, chat_id, photos[0], caption=caption, keyboard=keyboard):
+    if photos:
+        # Telegram media groups do not support inline keyboards. Keep the cover
+        # photo as the rich notification (caption + buttons), then send the rest
+        # as clean gallery albums. This avoids the 400 editMessageReplyMarkup
+        # error and keeps the alert readable.
+        cover = photos[0]
+        cover_sent = _send_single_photo(
+            token, chat_id, cover, caption=caption, keyboard=keyboard
+        )
+        if cover_sent:
+            remaining = photos[1:]
+            for batch in _chunks(remaining, 10):
+                if len(batch) >= 2:
+                    if _send_album_batch(token, chat_id, batch):
+                        continue
+                    for photo_url in batch:
+                        _send_single_photo(token, chat_id, photo_url)
+                elif len(batch) == 1:
+                    _send_single_photo(token, chat_id, batch[0])
             return
-
-    elif len(photos) >= 2:
-        batches = list(_chunks(photos, 10))
-        first_caption_pending = True
-        keyboard_pending = True
-        all_ok = True
-
-        for batch in batches:
-            # Telegram albums require 2-10 items. A final one-photo batch is
-            # sent with sendPhoto instead.
-            batch_caption = caption if first_caption_pending else None
-            batch_keyboard = keyboard if keyboard_pending else None
-            if len(batch) >= 2:
-                ok = _send_album_batch(
-                    token,
-                    chat_id,
-                    batch,
-                    caption=batch_caption,
-                    keyboard=batch_keyboard,
-                )
-                if ok:
-                    first_caption_pending = False
-                    keyboard_pending = False
-                    continue
-                all_ok = False
-                # Preserve all pictures even if one URL breaks the album.
-                for idx, photo_url in enumerate(batch):
-                    sent = _send_single_photo(
-                        token,
-                        chat_id,
-                        photo_url,
-                        caption=caption if first_caption_pending and idx == 0 else None,
-                        keyboard=keyboard if keyboard_pending and idx == 0 else None,
-                    )
-                    if sent and first_caption_pending:
-                        first_caption_pending = False
-                    if sent and keyboard_pending:
-                        keyboard_pending = False
-            else:
-                sent = _send_single_photo(
-                    token,
-                    chat_id,
-                    batch[0],
-                    caption=batch_caption,
-                    keyboard=batch_keyboard,
-                )
-                if sent:
-                    first_caption_pending = False
-                    keyboard_pending = False
-                else:
-                    all_ok = False
-
-        if not first_caption_pending:
-            return
-        if not all_ok:
-            print("WARN: aucune photo Telegram exploitable, fallback texte", file=sys.stderr)
 
     _telegram_api(
         token,
@@ -926,6 +888,9 @@ def update_state_and_notify(listings: Iterable[Listing], config: dict, state: di
             already_notified = True
 
         record = asdict(item)
+        # Gallery URLs are transient notification data; storing dozens of them
+        # per listing bloats seen.json and creates noisy commits every run.
+        record.pop("image_urls", None)
         record.update(
             {
                 "qualifies": qualifies,
