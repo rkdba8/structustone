@@ -329,7 +329,7 @@
       "available": true,
       "qualifies": false,
       "notified": true,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:27616": {
       "source": "living_stone",
@@ -351,7 +351,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:27505": {
       "source": "living_stone",
@@ -373,7 +373,7 @@
       "available": false,
       "qualifies": false,
       "notified": true,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:27448": {
       "source": "living_stone",
@@ -395,7 +395,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:27394": {
       "source": "living_stone",
@@ -417,7 +417,7 @@
       "available": false,
       "qualifies": false,
       "notified": true,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:27391": {
       "source": "living_stone",
@@ -439,7 +439,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:27386": {
       "source": "living_stone",
@@ -505,7 +505,7 @@
       "available": false,
       "qualifies": false,
       "notified": true,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:27115": {
       "source": "living_stone",
@@ -555,7 +555,7 @@
       "source": "living_stone",
       "key": "living_stone:26760",
       "url": "https://living-stone.be/fr/appartement/a-louer/tienen-3300/abelenhof-7-13-cinx4",
-      "title": "Appartement à louer à Tienen",
+      "title": "Appartement à louer in Tienen",
       "city": "Tienen",
       "postal_code": "3300",
       "address": "Abelenhof 7/13, 3300 Tienen",
@@ -571,7 +571,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:26754": {
       "source": "living_stone",
@@ -593,7 +593,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:26656": {
       "source": "living_stone",
@@ -643,7 +643,7 @@
       "source": "living_stone",
       "key": "living_stone:26676",
       "url": "https://living-stone.be/fr/appartement/a-louer/tienen-3300/diestsesteenweg-112-2-qqf13",
-      "title": "Duplex à louer à Tienen",
+      "title": "Duplex à louer in Tienen",
       "city": "Tienen",
       "postal_code": "3300",
       "address": "Diestsesteenweg 112/2, 3300 Tienen",
@@ -654,12 +654,12 @@
       "floor": null,
       "epc": "C",
       "image_url": "https://altro.fra1.cdn.digitaloceanspaces.com/production/estate-manager/55872/conversions/Z3M6Ly9tYXNvbi1wcm9kdWN0aW9uLXVwbG9hZHMvcHJvZHVjdGlvbi9hcHAvbW9kZWxzL2RvY3VtZW50LzEzNDUzNDAvcGljdHVyZV81NDc0NTc2XzQzMzU0MTAzLmpwZw-large.webp",
-      "booking_url": null,
+      "booking_url": "https://app.mason.immo/booking/GxODZR",
       "reference": "26676",
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:26412": {
       "source": "living_stone",
@@ -687,7 +687,7 @@
       "source": "living_stone",
       "key": "living_stone:26326",
       "url": "https://living-stone.be/fr/appartement/a-louer/anderlecht-1070/prins-van-luiklaan-16-0201-5qlwp",
-      "title": "Appartement à louer à Anderlecht",
+      "title": "Appartement à louer in Anderlecht",
       "city": "Anderlecht",
       "postal_code": "1070",
       "address": "Prins Van Luiklaan 16/02.01, 1070 Anderlecht",
@@ -703,7 +703,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:26182": {
       "source": "living_stone",
@@ -857,7 +857,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:23524": {
       "source": "living_stone",
@@ -885,7 +885,7 @@
       "source": "living_stone",
       "key": "living_stone:23277",
       "url": "https://living-stone.be/fr/appartement/a-louer/sint-jans-molenbeek-1080/leopold-ii-laan-61-19-euoyg",
-      "title": "Appartement louer à Molenbeek-Saint-Jean",
+      "title": "Appartement à louer in Sint-Jans-Molenbeek",
       "city": "Sint-Jans-Molenbeek",
       "postal_code": "1080",
       "address": "Leopold II laan 61/02.01, 1080 Sint-Jans-Molenbeek",
@@ -901,7 +901,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:23089": {
       "source": "living_stone",
@@ -951,7 +951,7 @@
       "source": "living_stone",
       "key": "living_stone:22995",
       "url": "https://living-stone.be/fr/appartement/a-louer/sint-jans-molenbeek-1080/idyllestraat-14-0301-flsds",
-      "title": "Appartement louer à Molenbeek-Saint-Jean",
+      "title": "Appartement à louer in Sint-Jans-Molenbeek",
       "city": "Sint-Jans-Molenbeek",
       "postal_code": "1080",
       "address": "Idyllestraat 14/03.01, 1080 Sint-Jans-Molenbeek",
@@ -967,7 +967,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:22992": {
       "source": "living_stone",
@@ -989,7 +989,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:22871": {
       "source": "living_stone",
@@ -1011,7 +1011,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:22851": {
       "source": "living_stone",
@@ -1105,7 +1105,7 @@
       "source": "living_stone",
       "key": "living_stone:15163",
       "url": "https://living-stone.be/fr/appartement/a-louer/ternat-1740/bodegemstraat-w5clf",
-      "title": "Duplex louer à Ternat",
+      "title": "Duplex à louer in Ternat",
       "city": "Ternat",
       "postal_code": "1740",
       "address": "Bodegemstraat 3/102, 1740 Ternat",
@@ -1121,13 +1121,13 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:8529": {
       "source": "living_stone",
       "key": "living_stone:8529",
       "url": "https://living-stone.be/fr/appartement/a-louer/dilbeek-1700/ninoofsesteenweg-xqm6f",
-      "title": "Appartement louer à Dilbeek",
+      "title": "Appartement à louer in Dilbeek",
       "city": "Dilbeek",
       "postal_code": "1700",
       "address": "Ninoofsesteenweg 404/03.02, 1700 Dilbeek",
@@ -1143,7 +1143,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:25531": {
       "source": "living_stone",
@@ -1253,7 +1253,7 @@
       "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:23798": {
       "source": "living_stone",
@@ -1297,7 +1297,7 @@
       "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:23112": {
       "source": "living_stone",
@@ -1319,7 +1319,7 @@
       "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:22829": {
       "source": "living_stone",
@@ -1341,7 +1341,7 @@
       "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:21962": {
       "source": "living_stone",
@@ -1385,7 +1385,7 @@
       "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:21892": {
       "source": "living_stone",
@@ -1407,7 +1407,7 @@
       "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:21454": {
       "source": "living_stone",
@@ -1429,7 +1429,7 @@
       "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:20876": {
       "source": "living_stone",
@@ -1451,7 +1451,7 @@
       "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:20221": {
       "source": "living_stone",
@@ -1473,7 +1473,7 @@
       "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:19345": {
       "source": "living_stone",
@@ -1495,7 +1495,7 @@
       "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:17801": {
       "source": "living_stone",
@@ -1517,7 +1517,7 @@
       "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:16969": {
       "source": "living_stone",
@@ -1539,7 +1539,7 @@
       "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:11443": {
       "source": "living_stone",
@@ -1605,7 +1605,7 @@
       "available": false,
       "qualifies": false,
       "notified": true,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:28424": {
       "source": "living_stone",
@@ -1627,7 +1627,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:28644": {
       "source": "living_stone",
@@ -1649,7 +1649,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:28683": {
       "source": "living_stone",
@@ -1671,7 +1671,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:28956": {
       "source": "living_stone",
@@ -1693,7 +1693,7 @@
       "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:29033": {
       "source": "living_stone",
@@ -1715,7 +1715,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:29280": {
       "source": "living_stone",
@@ -1737,7 +1737,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:29184": {
       "source": "living_stone",
@@ -1759,7 +1759,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:30635": {
       "source": "living_stone",
@@ -1781,7 +1781,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:30709": {
       "source": "living_stone",
@@ -1803,7 +1803,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:30700": {
       "source": "living_stone",
@@ -1825,7 +1825,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:30997": {
       "source": "living_stone",
@@ -1847,7 +1847,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:31019": {
       "source": "living_stone",
@@ -1869,7 +1869,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:31519": {
       "source": "living_stone",
@@ -1891,7 +1891,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:31515": {
       "source": "living_stone",
@@ -1913,7 +1913,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:31482": {
       "source": "living_stone",
@@ -1935,7 +1935,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:32218": {
       "source": "living_stone",
@@ -1957,7 +1957,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:32211": {
       "source": "living_stone",
@@ -1979,7 +1979,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:32208": {
       "source": "living_stone",
@@ -2001,7 +2001,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:32151": {
       "source": "living_stone",
@@ -2023,13 +2023,13 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
     },
     "living_stone:32333": {
       "source": "living_stone",
       "key": "living_stone:32333",
       "url": "https://living-stone.be/fr/appartement/a-louer/dilbeek-1700/oude-ninoofsebaan-53-0102-dlixp",
-      "title": "Appartement louer à Dilbeek",
+      "title": "Appartement à louer in Dilbeek",
       "city": "Dilbeek",
       "postal_code": "1700",
       "address": "Oude Ninoofsebaan 53/01.02, 1700 Dilbeek",
@@ -2045,8 +2045,74 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-10-13T03:28:32+00:00"
+      "last_seen": "2026-10-13T11:00:45+00:00"
+    },
+    "living_stone:32473": {
+      "source": "living_stone",
+      "key": "living_stone:32473",
+      "url": "https://living-stone.be/fr/appartement/a-louer/leuven-3000/diestsestraat-209-0303-wglgp",
+      "title": "Studio te huur in Leuven, nieuwbouw met terras",
+      "city": "Leuven",
+      "postal_code": "3000",
+      "address": null,
+      "rent": 895,
+      "charges": null,
+      "bedrooms": 1,
+      "surface": 33.39,
+      "floor": null,
+      "epc": "A",
+      "image_url": "https://altro.fra1.cdn.digitaloceanspaces.com/production/estate-manager/65311/conversions/Z3M6Ly9tYXNvbi1wcm9kdWN0aW9uLXVwbG9hZHMvcHJvZHVjdGlvbi9hcHAvbW9kZWxzL2RvY3VtZW50LzE1MTY0MTcvZGllc3RzZXN0cmFhdC0yMDktYnVzLTAzMDMtMzAwMC1sZXV2ZW5fMDAwMjcuanBn-large.webp",
+      "booking_url": null,
+      "reference": "32473",
+      "available": true,
+      "qualifies": false,
+      "notified": false,
+      "last_seen": "2026-10-13T11:00:45+00:00"
+    },
+    "living_stone:32450": {
+      "source": "living_stone",
+      "key": "living_stone:32450",
+      "url": "https://living-stone.be/fr/appartement/a-louer/groot-bijgaarden-1702/pampoelstraat-2b-0102-qllk7",
+      "title": "Prachtig appartement met groot terras en parking",
+      "city": "Groot-Bijgaarden",
+      "postal_code": "1702",
+      "address": "Pampoelstraat 2B/01.02, 1702 Groot-Bijgaarden",
+      "rent": 1000,
+      "charges": null,
+      "bedrooms": 1,
+      "surface": 92.0,
+      "floor": "1",
+      "epc": "A",
+      "image_url": "https://altro.fra1.cdn.digitaloceanspaces.com/production/estate-manager/65294/conversions/Z3M6Ly9tYXNvbi1wcm9kdWN0aW9uLXVwbG9hZHMvcHJvZHVjdGlvbi9hcHAvbW9kZWxzL2RvY3VtZW50LzE1MTQ4OTgvcGljdHVyZV81NDE5NzY4XzQyNTE4NzM4LmpwZw-large.webp",
+      "booking_url": null,
+      "reference": "32450",
+      "available": true,
+      "qualifies": false,
+      "notified": false,
+      "last_seen": "2026-10-13T11:00:45+00:00"
+    },
+    "living_stone:32440": {
+      "source": "living_stone",
+      "key": "living_stone:32440",
+      "url": "https://living-stone.be/fr/appartement/a-louer/dilbeek-1700/h-vergelslaan-2-fbz9l",
+      "title": "Appartement à louer in Dilbeek",
+      "city": "Dilbeek",
+      "postal_code": "1700",
+      "address": "H. Vergelslaan 2, 1700 Dilbeek",
+      "rent": 1100,
+      "charges": null,
+      "bedrooms": 2,
+      "surface": 8.0,
+      "floor": null,
+      "epc": "C",
+      "image_url": "https://altro.fra1.cdn.digitaloceanspaces.com/production/estate-manager/65292/conversions/Z3M6Ly9tYXNvbi1wcm9kdWN0aW9uLXVwbG9hZHMvcHJvZHVjdGlvbi9hcHAvbW9kZWxzL2RvY3VtZW50LzE1MTU5NzQvaC12ZXJnZWxzbGFhbi0yXzAwMDAxLmpwZw-large.webp",
+      "booking_url": "https://app.mason.immo/booking/zWBg8k",
+      "reference": "32440",
+      "available": true,
+      "qualifies": true,
+      "notified": true,
+      "last_seen": "2026-10-13T11:00:45+00:00"
     }
   },
-  "last_run": "2026-10-13T03:28:32+00:00"
+  "last_run": "2026-10-13T11:00:45+00:00"
 }
