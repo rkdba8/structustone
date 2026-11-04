@@ -329,13 +329,13 @@
       "available": false,
       "qualifies": false,
       "notified": true,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:27616": {
       "source": "living_stone",
       "key": "living_stone:27616",
       "url": "https://living-stone.be/fr/appartement/a-louer/ninove-9400/denderhoutembaan-202-2-8cvg4",
-      "title": "Appartement à louer in Ninove",
+      "title": "Appartement met groot terras en parking te huur in Ninove",
       "city": "Ninove",
       "postal_code": "9400",
       "address": null,
@@ -346,12 +346,12 @@
       "floor": "1",
       "epc": "B",
       "image_url": "https://altro.fra1.cdn.digitaloceanspaces.com/production/estate-manager/58307/conversions/Z3M6Ly9tYXNvbi1wcm9kdWN0aW9uLXVwbG9hZHMvcHJvZHVjdGlvbi9hcHAvbW9kZWxzL2RvY3VtZW50LzEzNjcwMTEvZGVuZGVyaG91dGVtYmFhbi0yMDJfMDAwMjAuanBn-large.webp",
-      "booking_url": "https://app.mason.immo/booking/7g4yVz?source=website",
+      "booking_url": null,
       "reference": "27616",
-      "available": true,
-      "qualifies": true,
+      "available": false,
+      "qualifies": false,
       "notified": true,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:27505": {
       "source": "living_stone",
@@ -395,7 +395,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:27394": {
       "source": "living_stone",
@@ -417,7 +417,7 @@
       "available": false,
       "qualifies": false,
       "notified": true,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:27391": {
       "source": "living_stone",
@@ -571,7 +571,7 @@
       "available": false,
       "qualifies": false,
       "notified": true,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:26754": {
       "source": "living_stone",
@@ -896,12 +896,12 @@
       "floor": "2",
       "epc": "B",
       "image_url": "https://altro.fra1.cdn.digitaloceanspaces.com/production/estate-manager/49020/conversions/Z3M6Ly9tYXNvbi1wcm9kdWN0aW9uLXVwbG9hZHMvcHJvZHVjdGlvbi9hcHAvbW9kZWxzL2RvY3VtZW50LzEyNzE1NTIvbGVvcG9sZC1paS1sYWFuLTYxLWJ1cy0xOV8wMDAyNS5qcGc-large.webp",
-      "booking_url": null,
+      "booking_url": "https://app.mason.immo/booking/GyvVA7?source=website",
       "reference": "23277",
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:23089": {
       "source": "living_stone",
@@ -967,7 +967,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:22992": {
       "source": "living_stone",
@@ -989,7 +989,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:22871": {
       "source": "living_stone",
@@ -1008,10 +1008,10 @@
       "image_url": "https://altro.fra1.cdn.digitaloceanspaces.com/production/estate-manager/48264/conversions/Z3M6Ly9tYXNvbi1wcm9kdWN0aW9uLXVwbG9hZHMvcHJvZHVjdGlvbi9hcHAvbW9kZWxzL2RvY3VtZW50LzEyNzAxMTcvdm9vcmdldmVsLTJkZS12ZXJkaWVwLmpwZw-large.webp",
       "booking_url": null,
       "reference": "22871",
-      "available": true,
+      "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:22851": {
       "source": "living_stone",
@@ -1121,7 +1121,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:8529": {
       "source": "living_stone",
@@ -1143,7 +1143,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:25531": {
       "source": "living_stone",
@@ -1495,7 +1495,7 @@
       "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:17801": {
       "source": "living_stone",
@@ -1715,7 +1715,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:29280": {
       "source": "living_stone",
@@ -1759,7 +1759,7 @@
       "available": false,
       "qualifies": false,
       "notified": true,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:30635": {
       "source": "living_stone",
@@ -1781,7 +1781,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:30709": {
       "source": "living_stone",
@@ -1847,7 +1847,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:31019": {
       "source": "living_stone",
@@ -1869,7 +1869,7 @@
       "available": false,
       "qualifies": false,
       "notified": true,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:31519": {
       "source": "living_stone",
@@ -1891,7 +1891,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:31515": {
       "source": "living_stone",
@@ -1957,7 +1957,7 @@
       "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:32211": {
       "source": "living_stone",
@@ -1979,7 +1979,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:32208": {
       "source": "living_stone",
@@ -2001,7 +2001,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:32151": {
       "source": "living_stone",
@@ -2023,13 +2023,13 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:32333": {
       "source": "living_stone",
       "key": "living_stone:32333",
       "url": "https://living-stone.be/fr/appartement/a-louer/dilbeek-1700/oude-ninoofsebaan-53-0102-dlixp",
-      "title": "Appartement à louer in Dilbeek",
+      "title": "Modern appartement met zuidgericht terras",
       "city": "Dilbeek",
       "postal_code": "1700",
       "address": "Oude Ninoofsebaan 53/01.02, 1700 Dilbeek",
@@ -2042,10 +2042,10 @@
       "image_url": "https://altro.fra1.cdn.digitaloceanspaces.com/production/estate-manager/65163/conversions/Z3M6Ly9tYXNvbi1wcm9kdWN0aW9uLXVwbG9hZHMvcHJvZHVjdGlvbi9hcHAvbW9kZWxzL2RvY3VtZW50LzE1MTQ4NDIvb3VkZS1uaW5vb2ZzZXN0ZWVud2VnLTUzXzAwMDAxLmpwZw-large.webp",
       "booking_url": null,
       "reference": "32333",
-      "available": true,
-      "qualifies": true,
+      "available": false,
+      "qualifies": false,
       "notified": true,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:32473": {
       "source": "living_stone",
@@ -2067,7 +2067,7 @@
       "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:32450": {
       "source": "living_stone",
@@ -2089,7 +2089,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:32440": {
       "source": "living_stone",
@@ -2106,12 +2106,12 @@
       "floor": "2",
       "epc": "C",
       "image_url": "https://altro.fra1.cdn.digitaloceanspaces.com/production/estate-manager/65292/conversions/Z3M6Ly9tYXNvbi1wcm9kdWN0aW9uLXVwbG9hZHMvcHJvZHVjdGlvbi9hcHAvbW9kZWxzL2RvY3VtZW50LzE1MTU5NzQvaC12ZXJnZWxzbGFhbi0yXzAwMDAxLmpwZw-large.webp",
-      "booking_url": null,
+      "booking_url": "https://app.mason.immo/booking/zWBg8k?source=website",
       "reference": "32440",
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:32956": {
       "source": "living_stone",
@@ -2133,7 +2133,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:33399": {
       "source": "living_stone",
@@ -2155,7 +2155,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:33396": {
       "source": "living_stone",
@@ -2199,7 +2199,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:33728": {
       "source": "living_stone",
@@ -2221,7 +2221,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:33883": {
       "source": "living_stone",
@@ -2243,7 +2243,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:33900": {
       "source": "living_stone",
@@ -2265,7 +2265,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:33985": {
       "source": "living_stone",
@@ -2287,7 +2287,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:34121": {
       "source": "living_stone",
@@ -2309,7 +2309,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:34112": {
       "source": "living_stone",
@@ -2331,7 +2331,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:34143": {
       "source": "living_stone",
@@ -2353,7 +2353,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:34406": {
       "source": "living_stone",
@@ -2375,7 +2375,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:34326": {
       "source": "living_stone",
@@ -2441,7 +2441,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:34567": {
       "source": "living_stone",
@@ -2463,7 +2463,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:34757": {
       "source": "living_stone",
@@ -2485,7 +2485,7 @@
       "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:34842": {
       "source": "living_stone",
@@ -2507,7 +2507,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:35252": {
       "source": "living_stone",
@@ -2529,7 +2529,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:35171": {
       "source": "living_stone",
@@ -2551,7 +2551,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
     },
     "living_stone:35409": {
       "source": "living_stone",
@@ -2573,8 +2573,52 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-04T02:39:50+00:00"
+      "last_seen": "2026-11-04T17:54:52+00:00"
+    },
+    "living_stone:36206": {
+      "source": "living_stone",
+      "key": "living_stone:36206",
+      "url": "https://living-stone.be/fr/appartement/a-louer/sint-jans-molenbeek-1080/rue-vandernoot-2-7-nzwvw",
+      "title": "Appartement à louer in Sint-Jans-Molenbeek",
+      "city": "Sint-Jans-Molenbeek",
+      "postal_code": "1080",
+      "address": "Rue Vandernoot 2/7, 1080 Sint-Jans-Molenbeek",
+      "rent": 1250,
+      "charges": null,
+      "bedrooms": 2,
+      "surface": 85.0,
+      "floor": "3",
+      "epc": "E",
+      "image_url": "https://altro.fra1.cdn.digitaloceanspaces.com/production/estate-manager/72591/conversions/Z3M6Ly9tYXNvbi1wcm9kdWN0aW9uLXVwbG9hZHMvcHJvZHVjdGlvbi9hcHAvbW9kZWxzL2RvY3VtZW50LzE1NzkzMTAvVm9vcmdldmVsLmpwZw-large.webp",
+      "booking_url": null,
+      "reference": "36206",
+      "available": true,
+      "qualifies": true,
+      "notified": true,
+      "last_seen": "2026-11-04T17:54:52+00:00"
+    },
+    "living_stone:36166": {
+      "source": "living_stone",
+      "key": "living_stone:36166",
+      "url": "https://living-stone.be/fr/appartement/a-louer/anderlecht-1070/van-souststraat-113-5-drwqy",
+      "title": "Appartement à louer in Anderlecht",
+      "city": "Anderlecht",
+      "postal_code": "1070",
+      "address": "Van Souststraat 113/5, 1070 Anderlecht",
+      "rent": 1100,
+      "charges": null,
+      "bedrooms": 2,
+      "surface": 88.0,
+      "floor": "4",
+      "epc": "D",
+      "image_url": "https://altro.fra1.cdn.digitaloceanspaces.com/production/estate-manager/72520/conversions/Z3M6Ly9tYXNvbi1wcm9kdWN0aW9uLXVwbG9hZHMvcHJvZHVjdGlvbi9hcHAvbW9kZWxzL2RvY3VtZW50LzE1MTIzNTEvcGljdHVyZV83NTQ2MTM4Xzc1MzYyNTI1LmpwZw-large.webp",
+      "booking_url": "https://app.mason.immo/booking/RbZwML?source=website",
+      "reference": "36166",
+      "available": true,
+      "qualifies": true,
+      "notified": true,
+      "last_seen": "2026-11-04T17:54:52+00:00"
     }
   },
-  "last_run": "2026-11-04T02:39:50+00:00"
+  "last_run": "2026-11-04T17:54:52+00:00"
 }
