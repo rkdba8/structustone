@@ -329,7 +329,7 @@
       "available": false,
       "qualifies": false,
       "notified": true,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:27616": {
       "source": "living_stone",
@@ -351,7 +351,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:27505": {
       "source": "living_stone",
@@ -395,7 +395,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:27394": {
       "source": "living_stone",
@@ -417,7 +417,7 @@
       "available": false,
       "qualifies": false,
       "notified": true,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:27391": {
       "source": "living_stone",
@@ -571,7 +571,7 @@
       "available": false,
       "qualifies": false,
       "notified": true,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:26754": {
       "source": "living_stone",
@@ -901,7 +901,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:23089": {
       "source": "living_stone",
@@ -967,7 +967,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:22992": {
       "source": "living_stone",
@@ -989,7 +989,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:22871": {
       "source": "living_stone",
@@ -1011,7 +1011,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:22851": {
       "source": "living_stone",
@@ -1121,7 +1121,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:8529": {
       "source": "living_stone",
@@ -1143,7 +1143,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:25531": {
       "source": "living_stone",
@@ -1495,7 +1495,7 @@
       "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:17801": {
       "source": "living_stone",
@@ -1715,7 +1715,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:29280": {
       "source": "living_stone",
@@ -1759,7 +1759,7 @@
       "available": false,
       "qualifies": false,
       "notified": true,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:30635": {
       "source": "living_stone",
@@ -1776,12 +1776,12 @@
       "floor": "4",
       "epc": "C",
       "image_url": "https://altro.fra1.cdn.digitaloceanspaces.com/production/estate-manager/62498/conversions/Z3M6Ly9tYXNvbi1wcm9kdWN0aW9uLXVwbG9hZHMvcHJvZHVjdGlvbi9hcHAvbW9kZWxzL2RvY3VtZW50LzE0ODc3NDQvaGV1dmVsMTAtMTcwMzI1MTQ3NV8xNzAzMjUzNzYzXzUzODA0X2JhMzE3NTEuanBn-large.webp",
-      "booking_url": "https://app.mason.immo/booking/RDp66q?source=website",
+      "booking_url": null,
       "reference": "30635",
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:30709": {
       "source": "living_stone",
@@ -1847,7 +1847,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:31019": {
       "source": "living_stone",
@@ -1869,7 +1869,7 @@
       "available": false,
       "qualifies": false,
       "notified": true,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:31519": {
       "source": "living_stone",
@@ -1891,7 +1891,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:31515": {
       "source": "living_stone",
@@ -1957,7 +1957,7 @@
       "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:32211": {
       "source": "living_stone",
@@ -1979,7 +1979,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:32208": {
       "source": "living_stone",
@@ -2001,7 +2001,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:32151": {
       "source": "living_stone",
@@ -2023,7 +2023,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:32333": {
       "source": "living_stone",
@@ -2040,12 +2040,12 @@
       "floor": "1",
       "epc": "A",
       "image_url": "https://altro.fra1.cdn.digitaloceanspaces.com/production/estate-manager/65163/conversions/Z3M6Ly9tYXNvbi1wcm9kdWN0aW9uLXVwbG9hZHMvcHJvZHVjdGlvbi9hcHAvbW9kZWxzL2RvY3VtZW50LzE1MTQ4NDIvb3VkZS1uaW5vb2ZzZXN0ZWVud2VnLTUzXzAwMDAxLmpwZw-large.webp",
-      "booking_url": "https://app.mason.immo/booking/7NWoBp?source=website",
+      "booking_url": null,
       "reference": "32333",
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:32473": {
       "source": "living_stone",
@@ -2067,7 +2067,7 @@
       "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:32450": {
       "source": "living_stone",
@@ -2089,7 +2089,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:32440": {
       "source": "living_stone",
@@ -2106,12 +2106,12 @@
       "floor": "2",
       "epc": "C",
       "image_url": "https://altro.fra1.cdn.digitaloceanspaces.com/production/estate-manager/65292/conversions/Z3M6Ly9tYXNvbi1wcm9kdWN0aW9uLXVwbG9hZHMvcHJvZHVjdGlvbi9hcHAvbW9kZWxzL2RvY3VtZW50LzE1MTU5NzQvaC12ZXJnZWxzbGFhbi0yXzAwMDAxLmpwZw-large.webp",
-      "booking_url": "https://app.mason.immo/booking/zWBg8k?source=website",
+      "booking_url": null,
       "reference": "32440",
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:32956": {
       "source": "living_stone",
@@ -2133,7 +2133,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:33399": {
       "source": "living_stone",
@@ -2155,7 +2155,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:33396": {
       "source": "living_stone",
@@ -2199,7 +2199,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:33728": {
       "source": "living_stone",
@@ -2221,7 +2221,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:33883": {
       "source": "living_stone",
@@ -2243,7 +2243,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:33900": {
       "source": "living_stone",
@@ -2265,7 +2265,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:33985": {
       "source": "living_stone",
@@ -2287,7 +2287,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:34121": {
       "source": "living_stone",
@@ -2309,7 +2309,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:34112": {
       "source": "living_stone",
@@ -2331,7 +2331,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:34143": {
       "source": "living_stone",
@@ -2353,7 +2353,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:34406": {
       "source": "living_stone",
@@ -2375,7 +2375,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:34326": {
       "source": "living_stone",
@@ -2441,7 +2441,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:34567": {
       "source": "living_stone",
@@ -2463,7 +2463,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:34757": {
       "source": "living_stone",
@@ -2485,7 +2485,7 @@
       "available": false,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:34842": {
       "source": "living_stone",
@@ -2507,7 +2507,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:35252": {
       "source": "living_stone",
@@ -2529,7 +2529,7 @@
       "available": true,
       "qualifies": true,
       "notified": true,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:35171": {
       "source": "living_stone",
@@ -2551,7 +2551,7 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     },
     "living_stone:35409": {
       "source": "living_stone",
@@ -2573,8 +2573,8 @@
       "available": true,
       "qualifies": false,
       "notified": false,
-      "last_seen": "2026-11-03T22:29:04+00:00"
+      "last_seen": "2026-11-04T02:39:50+00:00"
     }
   },
-  "last_run": "2026-11-03T22:29:04+00:00"
+  "last_run": "2026-11-04T02:39:50+00:00"
 }
